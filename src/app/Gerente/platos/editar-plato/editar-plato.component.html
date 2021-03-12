@@ -1,0 +1,107 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h3 class="card-title">Ingresar Nuevo Plato</h3>
+          </div>
+          <br />
+          <form
+            class="form-group"
+            [formGroup]="editarForm"
+            (ngSubmit)="postForm(editarForm.value)"
+          >
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <label class="h4">Categoría</label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control" formControlName="id_categoria">
+                <option value="Seleccion">Seleccione un local</option>
+                <option *ngFor="let cat of categorias" value="{{cat.id_categoria}}">{{ cat.nombre_categoria }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <label class="h4">Local</label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control" formControlName="id_local">
+                <option value="Seleccion">Seleccione un local</option>
+                <option *ngFor="let local of locales" value="{{local.id_local}}">{{ local.nombre_local }}</option>
+              </select>
+            </div>
+          </div>
+          
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <label class="h4">Platillo</label>
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese Nombre del Platillo"
+                  formControlName="nombre_platillo"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <label class="h4">Ingredientes</label>
+              </div>
+              <div class="col-md-6">
+                  <textarea type="text"
+                  class="form-control"
+                  placeholder="Ingrese los ingredientes que tiene el plato"
+                  formControlName="ingredientes"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <label class="h4">Valor</label>
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese Valor"
+                  formControlName="costo"
+                />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                  <label class="h4">Imagen</label>
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingrese Dirección"
+                    formControlName="imagen"
+                  />
+                </div>
+              </div>
+            <button
+              mat-raised-button
+              type="submit"
+              class="btn btn-success pull-right"
+            >
+              Agregar
+            </button>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

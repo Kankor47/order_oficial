@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <div class="brand-wrapper">
+                <img src="assets/img/icono.svg" alt="logo" width="35px" height="35px">
+              </div>
+              <h2 class="login-title ">Bienvenido</h2>
+              <p class="login-subtitle mb-4 ">
+                Para mantenerse conectado con nosotros, inicie sesión con su
+                información personal mediante dirección de correo electrónico y
+                contraseña.
+              </p>
+              <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                    class="input"
+                    type="text"
+                    formControlName="email"
+                    placeholder="Email"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-email">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Password is required" >
+                  <input
+                    class="input"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Password"
+                  />
+                  <span class="focus-input100 icon-lock"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customCheck1"
+                  />
+                  <label class="custom-control-label" for="customCheck1"
+                    >Recordar contraseña</label
+                  >
+                </div>
+                <button
+                  class="btn btn-lg btn-primary btn-block btn-login text-capitalize font-weight-bold mb-2"
+                  type="submit"
+                >
+                  Iniciar sesión
+                </button>
+              </form>
+            </div>
+            
+            
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-6 text-right login-subtitle">
+              <a href="javascript:void(0)" ><small>Olvidaste tu contraseña?</small></a              >
+            </div>
+            <div class="col-6 text-left login-subtitle">
+              <a routerLink="/registro"><small>Registrate aquí</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

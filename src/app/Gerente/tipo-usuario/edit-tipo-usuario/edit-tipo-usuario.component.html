@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h3 class="card-title">Actualizar Información</h3>
+          </div>
+          <div class="card-body">
+            <form class="form-group" [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="nombre_rol"
+                  />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success pull-right">
+                Actualizar
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

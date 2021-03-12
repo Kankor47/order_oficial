@@ -1,0 +1,92 @@
+<div class="wrapper">
+  <div
+    class="sidebar"
+    data-color="azure"
+    data-background-color="white"
+    data-image="./assets/img/sidebar-1.jpg"
+  >
+    <app-sidebar></app-sidebar>
+    <div
+      class="sidebar-background"
+      style="background-image: url(./assets/img/sidebar-4.jpg)"
+    ></div>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h3 class="card-title">Lista de Tipo de Pedido</h3>
+                    </div>
+                    <div class="card-body">
+                        <app-agregar-tipo-pedido></app-agregar-tipo-pedido>
+                        <br/>
+                        <div class="card-header card-header-success">
+                            <h5 class="card-title">Listado de Tipo de Pedido</h5>
+                        </div>
+                        <form class="form-group">
+                            <mat-form-field>
+                                <mat-label>Buscar</mat-label>
+                                <input
+                                  matInput
+                                  (keyup)="applyFilter($event)"
+                                  placeholder="Ex. Mia"
+                                  #input
+                                />
+                              </mat-form-field>
+                              <div class="mat-elevation-z12">
+                                <table mat-table [dataSource]="dataSource" matSort>
+                                  <!-- ID Column -->
+                                  <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                      ID
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">{{ row.id_pedido }}</td>
+                                  </ng-container>
+                
+                                  <!-- Progress Column -->
+                                  <ng-container matColumnDef="tipo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                      Tipo de Pedido
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                      {{ row.deta_pedido }}
+                                    </td>
+                                  </ng-container>
+                                  <ng-container matColumnDef="borrar">
+                                    <th mat-header-cell *matHeaderCellDef> Editar </th>
+                                    <td mat-cell *matCellDef="let j">
+                                      <button mat-icon-button color="warn" focusable="false" (click)="editarTipoPedido(j.id_tipo)">
+                                        <mat-icon>edit</mat-icon>
+                                      </button>
+                                    </td>
+                                  </ng-container>
+                
+                                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                  <tr
+                                    mat-row
+                                    *matRowDef="let row; columns: displayedColumns"
+                                  ></tr>
+                
+                                  <!-- Row shown when there is no matching data. -->
+                                  <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">
+                                      No data matching the filter "{{ input.value }}"
+                                    </td>
+                                  </tr>
+                                </table>
+                
+                                <mat-paginator
+                                  [pageSizeOptions]="[5, 10, 25, 100]"
+                                ></mat-paginator>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

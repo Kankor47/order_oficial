@@ -1,0 +1,21 @@
+<div class="card-header card-header-success">
+  <h5 class="card-title">Ingresar Nuevo Tipo de Pedido</h5>
+</div>
+<br/>
+<form class="form-group" [formGroup]="nuevoForm" (ngSubmit)="agregar(nuevoForm.value)">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese nuevo tipo de pedido"
+        formControlName="deta_pedido"
+      />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success pull-right">
+    Agregar
+  </button>
+  <div class="clearfix"></div>
+</form>

@@ -1,0 +1,43 @@
+<div class="card-header card-header-success">
+  <h5 class="card-title">Ingresar Nuevo Local</h5>
+</div>
+<br />
+<form
+  class="form-group"
+  [formGroup]="nuevoForm"
+  (ngSubmit)="agregar(nuevoForm.value)"
+>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <label class="h4">Nombre del Local</label>
+  </div>
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Nombre del Local"
+      formControlName="nombre_local"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <label class="h4">Dirección</label>
+  </div>
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Dirección"
+      formControlName="direccion_local"
+    />
+  </div>
+</div>
+
+  <button mat-raised-button type="submit" class="btn btn-success pull-right">
+    Agregar
+  </button>
+  <div class="clearfix"></div>
+</form>

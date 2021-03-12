@@ -1,0 +1,108 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <div class="brand-wrapper">
+                <img src="assets/img/icono.svg" alt="logo" width="35px" height="35px">
+              </div>
+              <h2 class="login-title ">Registrate</h2>
+              <p class="login-subtitle mb-4 ">
+                A continuación ingresa tu información personal para obtener un mejor servicio.
+              </p>
+              <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                  formControlName="cedula"
+                    class="input"
+                    type="text"
+                    placeholder="Cédula"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-lock">
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                  formControlName="nombres"
+                    class="input"
+                    type="text"
+                    
+                    placeholder="Nombres"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-lock">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                    class="input"
+                    type="text"
+                    formControlName="direccion"
+                    placeholder="Dirección"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-lock">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                    class="input"
+                    type="text"
+                    formControlName="telefono"
+                    placeholder="Teléfono"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-lock">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                  <input
+                    class="input"
+                    type="text"
+                    formControlName="email"
+                    placeholder="Email"
+                  />
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100 icon-email">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Password is required" >
+                  <input
+                    class="input"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Password"
+                  />
+                  <span class="focus-input100 icon-lock"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+               
+                <button
+                  class="btn btn-lg btn-primary btn-block btn-login text-capitalize font-weight-bold mb-6"
+                
+                >
+                  Registrarse
+                </button>
+              </form>
+            </div>
+            
+            
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

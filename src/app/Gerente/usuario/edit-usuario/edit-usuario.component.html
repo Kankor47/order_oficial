@@ -1,0 +1,151 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h3 class="card-title">Actualizar Usuario</h3>
+          </div>
+          <div class="card-body">
+            <form class="form-group" [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+              <br />
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Número de Cédula</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="cedula"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Nombre Completo</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ej. Wilmer Alexander Ojeda Escobar"
+                    formControlName="nombres"
+                  />
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Número de Teléfono</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Teléfono ejemplo (+593)987984305"
+                    formControlName="telefono"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Dirección de Domicilio</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ej. Chorlavi Casa 6-73"
+                    formControlName="direccion"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Seleccione Rol de Usuario</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="id_rol">
+                    <option *ngFor="let tipo of tiposUser" >
+                      {{ tipo.id_rol }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Ingrese Local</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="id_local">
+                    <option *ngFor="let local of locales" >
+                      {{ local.id_local }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Usuario</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Usuario"
+                    formControlName="email"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                  <label style="font-style: normal; font-size: 18px"
+                    >Ingrese Estado actual del usuario</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="estado">
+                    <option value="A">Activo</option>
+                    <option value="I">Inactivo</option>
+                  </select>
+                </div>
+              </div>
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-success pull-right"
+              >
+                Agregar Usuario
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
