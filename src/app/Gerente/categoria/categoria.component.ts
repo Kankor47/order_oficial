@@ -16,7 +16,7 @@ export class CategoriaComponent implements OnInit {
   categorias:ListaCategoria[]
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  displayedColumns: string[] = ["id", "nombre_categoria","borrar"];
+  displayedColumns: string[] = ["id", "nombre_categoria","imagen_categoria","borrar"];
   dataSource;
 
   constructor(private rest:RestService, private router:Router) {

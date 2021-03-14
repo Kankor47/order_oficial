@@ -19,6 +19,8 @@ export class EditLocalComponent implements OnInit {
   editarForm = new FormGroup({
     nombre_local: new FormControl(''),
     direccion_local: new FormControl(''),
+    logo_local: new FormControl(''),
+    portada_local: new FormControl(''),
     id_local: new FormControl(''),
   });
 
@@ -37,6 +39,8 @@ export class EditLocalComponent implements OnInit {
       this.editarForm.setValue({
         'nombre_local': this.local.nombre_local,
         'direccion_local': this.local.direccion_local,
+        'logo_local': this.local.logo_local,
+        'portada_local': this.local.portada_local,
         'id_local': this.local.id_local,
       });
     });

@@ -16,6 +16,8 @@ export class AgregarLocalComponent implements OnInit {
   nuevoForm = new FormGroup({
     nombre_local: new FormControl(''),
     direccion_local: new FormControl(''),
+    logo_local: new FormControl(''),
+    portada_local: new FormControl(''),
     id_local: new FormControl(''),
   });
 

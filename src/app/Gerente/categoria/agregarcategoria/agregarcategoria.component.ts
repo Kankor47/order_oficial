@@ -15,6 +15,7 @@ export class AgregarcategoriaComponent implements OnInit {
 
   nuevoForm = new FormGroup({
     nombre_categoria: new FormControl(''),
+    imagen_categoria: new FormControl(''),
     id_categoria:new FormControl(''),
 });
 

@@ -16,7 +16,7 @@ export class LocalComponent implements OnInit {
   locales:ListaLocalI[];
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  displayedColumns: string[] = ["id_local", "nombre_local", "dirección_local","borrar"];
+  displayedColumns: string[] = ["id_local", "nombre_local", "dirección_local","logo_local","portada_local","borrar"];
   dataSource;
 
   constructor(private rest:RestService, private router:Router) {  

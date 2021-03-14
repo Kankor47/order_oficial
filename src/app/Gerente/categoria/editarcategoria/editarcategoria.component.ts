@@ -17,6 +17,7 @@ export class EditarcategoriaComponent implements OnInit {
 
   editarForm = new FormGroup({
     nombre_categoria: new FormControl(''),
+    imagen_categoria: new FormControl(''),
     id_categoria:new FormControl(''),
 });
 
@@ -28,6 +29,7 @@ export class EditarcategoriaComponent implements OnInit {
       this.categoria=Data;
       this.editarForm.setValue({
         'nombre_categoria': this.categoria.nombre_categoria,
+        'imagen_categoria': this.categoria.imagen_categoria,
         'id_categoria': this.categoria.id_categoria,
       });
       
@@ -37,9 +39,9 @@ export class EditarcategoriaComponent implements OnInit {
   postForm(form:CategoriaI){
     this.rest.putCategoria(form).subscribe(Data=>{
       let resp:ResponseI=Data;
-      if(resp.data=="Información agregada con exito"){
+      if(resp.data=="Información actualizada con exito"){
         this.alertas.showSucces('Datos Agregados','Hecho');
-        this.router.navigate(['tipo-pedido']);
+        this.router.navigate(['categoria']);
       }
       else
       {

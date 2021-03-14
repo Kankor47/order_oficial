@@ -10,12 +10,28 @@
               <form class="form-group" [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
                 <div class="row">
                   <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                    <label class="h4">Categoría</label></div>
                   <div class="col-md-4">
                     <input
                       type="text"
                       class="form-control"
                       placeholder="Ingrese nueva categoría"
                       formControlName="nombre_categoria"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                    <label class="h4">Imagen</label></div>
+                  <div class="col-md-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ingrese nueva imagen"
+                      formControlName="imagen_categoria"
                     />
                   </div>
                 </div>

@@ -13,7 +13,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/tipo-usuario', title: 'Tipo de Usuario', icon:'assignment_ind', class:''},
     { path: '/local', title: 'Local',  icon:'home', class: '' },
     { path: '/platillo', title: 'Platillo',  icon:'restaurant', class: '' },
-    { path: '/tipo-pedido', title: 'Tipo Pedido',  icon:'delivery_dining', class: '' },
+    //{ path: '/tipo-pedido', title: 'Tipo Pedido',  icon:'delivery_dining', class: '' },
     { path: '/categoria', title: 'Categoria',  icon:'category', class: '' },  
 ];
 
