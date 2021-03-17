@@ -23,9 +23,12 @@ export class TipoPedidoComponent implements OnInit {
     this.dataSource = new MatTableDataSource<ListaTipoPedidoI>(this.tipos_pedido)
    }
 
-  ngOnInit(): void {
+   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort=this.sort;
+    this.dataSource.sort = this.sort;
+  }
+
+  ngOnInit(): void {
     this.getAllTiposPedido();
   }
 

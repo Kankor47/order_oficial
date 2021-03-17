@@ -2,9 +2,15 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from 'app/api/rest.service';
-import { ListaPlatosI } from 'app/Gerente/platos/ListaPlatos.interface';
+import { ListaCabeceraI } from './listacabecera.interface';
+import {MatDialog} from '@angular/material/dialog';
+import { CabeceraI } from './editar-cocina/cabecera.interface';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ResponseI } from 'app/modelos/response.interface';
+import { AlertasService } from 'app/api/alertas/alertas.service';
+import { EditarCocinaComponent } from './editar-cocina/editar-cocina.component';
 
 declare interface RouteInfo {
   path: string;
@@ -12,10 +18,6 @@ declare interface RouteInfo {
   icon: string;
   class: string;
 }
-export const ROUTES: RouteInfo[] = [
-  { path: '/cocina', title: 'Escritorio',  icon: 'dashboard', class: '' },
-];
-
 
 @Component({
   selector: 'app-cocina',
@@ -24,15 +26,15 @@ export const ROUTES: RouteInfo[] = [
 })
 export class CocinaComponent implements AfterViewInit {
   menuItems: any[];
+  pedidos:ListaCabeceraI[];
 
-  platos:ListaPlatosI[];
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  displayedColumns: string[] = ["id","nombre_categoria","nombre_local","nombre","ingredientes",	"costo","imagen","borrar"];
+  displayedColumns: string[] = ["id_cabecera","id_usuario","id_tipo_pedido","estado","lugar_entrega","borrar"];
   dataSource;
 
   constructor(private rest:RestService, private router:Router) {
-    this.dataSource = new MatTableDataSource<ListaPlatosI>(this.platos);
+    this.dataSource = new MatTableDataSource<ListaCabeceraI>(this.pedidos);
    }
 
    ngAfterViewInit() {
@@ -41,13 +43,13 @@ export class CocinaComponent implements AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getAllPlatos();
+    this.getAllPedidos();
   }
 
-  public getAllPlatos(){
-    let respo=this.rest.getPlatillo();
+  public getAllPedidos(){
+    let respo=this.rest.getCabecera();
     respo.subscribe(Data=>{
-      this.dataSource.data=Data as ListaPlatosI[];
+      this.dataSource.data=Data as ListaCabeceraI[];
     });
   }
   applyFilter(event: Event) {
@@ -55,11 +57,7 @@ export class CocinaComponent implements AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  isMobileMenu() {
-    if ($(window).width() > 991) {
-        return false;
-    }
-    return true;
-};
-
+  editarEstado(id){
+    this.router.navigate(['edit-cocina',id]);
+  }
 }

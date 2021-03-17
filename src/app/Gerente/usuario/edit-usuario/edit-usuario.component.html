@@ -83,8 +83,8 @@
                 </div>
                 <div class="col-md-6">
                   <select class="form-control" formControlName="id_rol">
-                    <option *ngFor="let tipo of tiposUser" >
-                      {{ tipo.id_rol }}
+                    <option *ngFor="let tipo of tiposUser" value="{{tipo.id_rol}}">
+                      {{ tipo.nombre_rol }}
                     </option>
                   </select>
                 </div>
@@ -98,8 +98,8 @@
                 </div>
                 <div class="col-md-6">
                   <select class="form-control" formControlName="id_local">
-                    <option *ngFor="let local of locales" >
-                      {{ local.id_local }}
+                    <option *ngFor="let local of locales" value="{{local.id_local}}">
+                      {{ local.nombre_local }}
                     </option>
                   </select>
                 </div>

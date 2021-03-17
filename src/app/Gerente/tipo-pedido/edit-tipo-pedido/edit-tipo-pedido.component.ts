@@ -16,28 +16,29 @@ export class EditTipoPedidoComponent implements OnInit {
   pedido:TipoPedidoI;
 
   editarForm = new FormGroup({
-    deta_pedido: new FormControl(''),
-    id_pedido:new FormControl(''),
+    nombre_tipo_pedido: new FormControl(''),
+    id_tipo_pedido:new FormControl(''),
 });
 
   constructor(private rest:RestService, private router:Router, private activeroute:ActivatedRoute, private alertas:AlertasService) { }
 
   ngOnInit(): void {
-    let id = this.activeroute.snapshot.paramMap.get('id_pedido');
+    let id = this.activeroute.snapshot.paramMap.get('id_tipo_pedido');
     this.rest.getTipoPedidoID(id).subscribe(Data=>{
       this.pedido=Data;
       this.editarForm.setValue({
-        'deta_pedido': this.pedido.deta_pedido,
-        'id_pedido': this.pedido.id_pedido,
+        'nombre_tipo_pedido': this.pedido.nombre_tipo_pedido,
+        'id_tipo_pedido': this.pedido.id_tipo_pedido,
       });
       
-    }) 
+    });
+    console.log(this.editarForm);
   }
 
   postForm(form:TipoPedidoI){
     this.rest.putTipoPedido(form).subscribe(Data=>{
       let resp:ResponseI=Data;
-      if(resp.data=="Información agregada con exito"){
+      if(resp.data=="Información actualizada con exito"){
         this.alertas.showSucces('Datos Agregados','Hecho');
         this.router.navigate(['tipo-pedido']);
       }

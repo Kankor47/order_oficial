@@ -10,10 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-
-
-
 @NgModule({
   declarations: [
     PublicComponent,
@@ -26,7 +22,6 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
- 
   ]
 })
 export class PublicModule { }

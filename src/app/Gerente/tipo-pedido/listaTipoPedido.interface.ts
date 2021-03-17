@@ -1,4 +1,4 @@
 export interface ListaTipoPedidoI{
-    id_pedido:number;
-    deta_pedido:string;
+    id_tipo_pedido:number;
+    nombre_tipo_pedido:string;
 }

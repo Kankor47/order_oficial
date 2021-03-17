@@ -15,6 +15,8 @@ import { Observable } from 'rxjs';
 import { formatCurrency } from '@angular/common';
 import { CategoriaI } from 'app/Gerente/categoria/editarcategoria/categoria.interface';
 import { ListaCategoria } from 'app/Gerente/categoria/listcategoria.interface';
+import { CabeceraI } from 'app/empleados/cocina/editar-cocina/cabecera.interface';
+import { ListaCabeceraI } from 'app/empleados/cocina/listacabecera.interface';
 
 
 @Injectable({
@@ -53,9 +55,9 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
     return this.http.get<ListaLocalI[]>(direcccion);
   }
 
-  public getCabecera():Observable<ListaTipoPedidoI[]>{
-    let direcccion = this._url + "list_pedido";
-    return this.http.get<ListaTipoPedidoI[]>(direcccion);
+  public getCabecera():Observable<ListaCabeceraI[]>{
+    let direcccion = this._url + "get/pedido";
+    return this.http.get<ListaCabeceraI[]>(direcccion);
   }
 
   public getCategoria():Observable<ListaCategoria[]>{
@@ -64,6 +66,11 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
   }
 
   //buscar por ID
+  public getCabeceraID(id):Observable<CabeceraI>{
+    let direcccion = this._url+"get/pedido/"+id;
+    return this.http.get<CabeceraI>(direcccion);
+  }
+  
   public getUserID(id):Observable<UsuarioI>{
     let direcccion = this._url+"get/usuario/"+id;
     return this.http.get<UsuarioI>(direcccion);
@@ -87,11 +94,6 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
   public getLocalID(id):Observable<LocalI>{
     let direcccion = this._url + "get/local/"+id;
     return this.http.get<LocalI>(direcccion);
-  }
-
-  public getCabeceraID(id):Observable<TipoPedidoI>{
-    let direcccion = this._url + "get/pedido/"+id;
-    return this.http.get<TipoPedidoI>(direcccion);
   }
 
   public getCategoriaID(id):Observable<CategoriaI>{
@@ -130,6 +132,11 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
     return this.http.put<ResponseI>(direccion,form);
   }
 
+  public putCabecera(form:CabeceraI):Observable<ResponseI>{
+    let direccion = this._url+"put/pedido";
+    return this.http.put<ResponseI>(direccion,form);
+  }
+
   //metodos agregar
   public postLocal(form:LocalI):Observable<ResponseI>{
     let direccion = this._url+"post/local";
@@ -161,8 +168,8 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
     return this.http.post<ResponseI>(direccion,form);
   }
 
-  /*public postCabecera(form:CabeceraI):Observable<ResponseI>{
-    let direccion = this._url+"";
+  public postCabecera(form:CabeceraI):Observable<ResponseI>{
+    let direccion = this._url+"post/pedido";
     return this.http.post<ResponseI>(direccion,form);
-  }*/
+  }
 }

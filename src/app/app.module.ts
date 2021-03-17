@@ -11,32 +11,11 @@ import { AppComponent } from './app.component';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
-
-//Cliente Registro
-
-// Cliente Perfil
-import { PerfilComponent } from './Cliente/perfil/perfil.component';
-
-//Cliente Hacer Pedido
-import { HacerPedidoComponent } from './Cliente/hacer-pedido/hacer-pedido.component';
-//Cliente Selecciona Local 
-import { SeleccionLocalComponent } from './Cliente/seleccion-local/seleccion-local.component';
-//Cliente Seleccionar Plato
-import { SeleccionPlatoComponent } from './Cliente/seleccion-plato/seleccion-plato.component';
-//Cliente Recuperar Contraseña
-import { RecuperarContraseniaComponent } from './Cliente/recuperar-contrasenia/recuperar-contrasenia.component';
-
 
 //Gerente - Usuario
 import { UsuarioComponent } from './Gerente/usuario/usuario.component';
@@ -77,16 +56,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select'; 
 import { CocinaComponent } from './empleados/cocina/cocina.component';
 import { CajaComponent } from './empleados/caja/caja.component';
-import { PedidoEntranteComponent } from './empleados/cocina/pedido-entrante/pedido-entrante.component';
 import { EstadoPedidoComponent } from './empleados/caja/estado-pedido/estado-pedido.component';
 import { EditarCocinaComponent } from './empleados/cocina/editar-cocina/editar-cocina.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { ClientComponent } from './client/client.component';
-import { TestComponent } from './Gerente/test/test.component';
-
-
-
-
 
 @NgModule({
   imports: [
@@ -136,19 +108,6 @@ import { TestComponent } from './Gerente/test/test.component';
     AgregarPlatoComponent,
     EditarPlatoComponent,
     PlatosComponent,
-    //Cliente Registro 
-
-    //Cliente Perfil
-    PerfilComponent,
-
-    //Cliente Seleccionar local
-    SeleccionLocalComponent,
-    //Cliente Selecciona Plato
-    SeleccionPlatoComponent,
-    //Cliente Hacer Pedido
-    HacerPedidoComponent,
-    //Cliente Recuperar Contraseña
-    RecuperarContraseniaComponent,
 
     AgregarUsuarioComponent,
     AgregarTipoPedidoComponent,
@@ -163,12 +122,8 @@ import { TestComponent } from './Gerente/test/test.component';
     AgregarcategoriaComponent,
     CocinaComponent,
     CajaComponent,
-    PedidoEntranteComponent,
     EstadoPedidoComponent,
     EditarCocinaComponent,
-    TestComponent,
-
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

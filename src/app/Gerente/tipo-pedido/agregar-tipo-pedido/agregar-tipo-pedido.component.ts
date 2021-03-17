@@ -14,8 +14,8 @@ import { TipoPedidoI } from '../edit-tipo-pedido/tipopedido.interface';
 export class AgregarTipoPedidoComponent implements OnInit {
 
   nuevoForm = new FormGroup({
-    deta_pedido: new FormControl(''),
-    id_pedido:new FormControl(''),
+    nombre_tipo_pedido: new FormControl(''),
+    id_tipo_pedido:new FormControl(''),
 });
 
   constructor(private router:Router, private rest:RestService, private alertas:AlertasService) { }

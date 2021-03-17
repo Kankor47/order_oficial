@@ -91,7 +91,7 @@
     </div>
     <div class="col-md-6">
       <select class="form-control" formControlName="id_local">
-        <option value="Seleccion">Seleccione un local</option>
+        <option>Seleccione un local</option>
         <option *ngFor="let local of locales" value="{{local.id_local}}">{{ local.nombre_local }}</option>
       </select>
     </div>

@@ -1,9 +1,4 @@
 import { Routes } from '@angular/router';
-import { HacerPedidoComponent } from 'app/Cliente/hacer-pedido/hacer-pedido.component';
-import { PerfilComponent } from 'app/Cliente/perfil/perfil.component';
-
-import { SeleccionLocalComponent } from 'app/Cliente/seleccion-local/seleccion-local.component';
-import { SeleccionPlatoComponent } from 'app/Cliente/seleccion-plato/seleccion-plato.component';
 import { CajaComponent } from 'app/empleados/caja/caja.component';
 import { CategoriaComponent } from 'app/gerente/categoria/categoria.component';
 import { EditarcategoriaComponent } from 'app/gerente/categoria/editarcategoria/editarcategoria.component';
@@ -22,13 +17,10 @@ import { SecureComponent } from 'app/secure/secure.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CocinaComponent } from '../empleados/cocina/cocina.component';
-import { PedidoEntranteComponent } from '../empleados/cocina/pedido-entrante/pedido-entrante.component';
 import { EstadoPedidoComponent } from '../empleados/caja/estado-pedido/estado-pedido.component';
-import { HomeComponent } from 'app/client/home/home.component';
-import { TestComponent } from 'app/Gerente/test/test.component';
+import { EditarCocinaComponent } from 'app/empleados/cocina/editar-cocina/editar-cocina.component';
 
 export const PublicRoutes: Routes = [
-    { path: 'home',       component: HomeComponent},
     { path: 'registro',       component: RegistroComponent},
     { path: 'login',          component: LoginComponent},
     { path: 'secure',         component: SecureComponent},
@@ -39,22 +31,14 @@ export const PublicRoutes: Routes = [
     { path: 'tipo-usuario',   component: TipoUsuarioComponent },
     { path: 'platillo',       component: PlatosComponent },
     { path: 'categoria',      component: CategoriaComponent},
-    { path: 'test',        component: TestComponent },
 
     //Editar
     { path: 'edit-usuario/:id_usuario',     component:EditUsuarioComponent},
     { path: 'edit-tipo-usuario/:id_rol',    component:EditTipoUsuarioComponent},
-    { path: 'edit-tipo-pedido/:id_pedido',  component:EditTipoPedidoComponent},
+    { path: 'edit-tipo-pedido/:id_tipo_pedido',  component:EditTipoPedidoComponent},
     { path: 'edit-platillo/:id_platillo',   component:EditarPlatoComponent},
     { path: 'edit-local/:id_local',         component:EditLocalComponent},
     { path: 'edit-categoria/:id_categoria', component:EditarcategoriaComponent},
-
-    //Cliente
-    { path: 'selec-local',            component:SeleccionLocalComponent},
-    { path: 'select-plato',           component:SeleccionPlatoComponent},
-
-    { path: 'perfil',                 component:PerfilComponent},
-    { path: 'hacer-pedido',           component:HacerPedidoComponent},
 
     //Caja
     { path: 'caja',         component:CajaComponent},
@@ -62,5 +46,5 @@ export const PublicRoutes: Routes = [
 
     //Cocina
     { path: 'cocina',               component:CocinaComponent},
-    { path: 'pedido-entrante',      component:PedidoEntranteComponent}
+    { path: 'edit-cocina/:id_cabecera',          component:EditarCocinaComponent},
 ]
