@@ -15,13 +15,11 @@ import { UsuarioComponent } from 'app/Gerente/usuario/usuario.component';
 import { AdminLayoutComponent } from 'app/layouts/admin-layout/admin-layout.component';
 import { SecureComponent } from 'app/secure/secure.component';
 import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
 import { CocinaComponent } from '../empleados/cocina/cocina.component';
 import { EstadoPedidoComponent } from '../empleados/caja/estado-pedido/estado-pedido.component';
 import { EditarCocinaComponent } from 'app/empleados/cocina/editar-cocina/editar-cocina.component';
 
 export const PublicRoutes: Routes = [
-    { path: 'registro',       component: RegistroComponent},
     { path: 'login',          component: LoginComponent},
     { path: 'secure',         component: SecureComponent},
     { path: 'admin',          component: AdminLayoutComponent},

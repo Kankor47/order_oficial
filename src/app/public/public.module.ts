@@ -7,14 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PublicRoutes } from './public.routing';
 import { FormsModule } from '@angular/forms';
-import { RegistroComponent } from './registro/registro.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     PublicComponent,
-    LoginComponent,
-    RegistroComponent],
+    LoginComponent,],
   imports: [
     CommonModule,
     RouterModule.forChild(PublicRoutes),

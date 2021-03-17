@@ -27,17 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-  
-    /*const formData = this.form.getRawValue();
-    const data= {
-      username:formData.email,
-      password:formData.password,
-      grant_type : 'password',
-      client_id : 2,
-      client_secret : 'RCXARwhWxbAPhPVhb3mg7IKJWngVmTkmoZ5cEUzc',
-      scope : '*'
-    }
-*/
     this.http.post('https://order-back3nd.herokuapp.com/api/auth/login',this.form.getRawValue(),{withCredentials:true}).subscribe(
       (result:any) =>{
         localStorage.setItem('token',result.message);
