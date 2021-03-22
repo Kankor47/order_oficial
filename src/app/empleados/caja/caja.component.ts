@@ -5,6 +5,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { Router } from "@angular/router";
 import { RestService } from "app/api/rest.service";
 import { ListaPlatosI } from "app/Gerente/platos/ListaPlatos.interface";
+import { ListaCabeceraI } from "../cocina/listacabecera.interface";
 
 declare interface RouteInfo {
   path: string;
@@ -33,17 +34,16 @@ export class CajaComponent implements OnInit {
 
   menuItems: any[];
 
-  platos:ListaPlatosI[];
+  pedidos:ListaCabeceraI[];
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  displayedColumns: string[] = ["id","id_user","estado","detalle","subtotal","total","borrar"];
+  displayedColumns: string[] = ["id_cabecera","id_usuario","id_tipo_pedido","estado","lugar_entrega","borrar"];
   dataSource;
 
   constructor(private rest:RestService, private router:Router) {
-    this.dataSource = new MatTableDataSource<ListaPlatosI>(this.platos);
-    this.rest.getPlatillo().subscribe(Data=>{
-      this.platos=Data;
-    })
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.dataSource = new MatTableDataSource<ListaCabeceraI>(this.pedidos);
    }
 
    ngAfterViewInit() {
@@ -52,14 +52,13 @@ export class CajaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.getAllPlatos();
+    this.getAllPedidos();
   }
 
-  public getAllPlatos(){
-    let respo=this.rest.getPlatillo();
+  public getAllPedidos(){
+    let respo=this.rest.getCabecera();
     respo.subscribe(Data=>{
-      this.dataSource.data=Data as ListaPlatosI[];
+      this.dataSource.data=Data as ListaCabeceraI[];
     });
   }
   applyFilter(event: Event) {
@@ -68,7 +67,6 @@ export class CajaComponent implements OnInit {
   }
 
   editarEstado(id){
-    this.router.navigate(['edit-cocina',id]);
+    this.router.navigate(['editar-caja',id]);
   }
-  
 }

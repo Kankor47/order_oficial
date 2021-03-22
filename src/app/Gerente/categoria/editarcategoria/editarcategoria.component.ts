@@ -32,7 +32,6 @@ export class EditarcategoriaComponent implements OnInit {
         'imagen_categoria': this.categoria.imagen_categoria,
         'id_categoria': this.categoria.id_categoria,
       });
-      
     }) 
   }
 

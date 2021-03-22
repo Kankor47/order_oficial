@@ -56,6 +56,7 @@ import { CajaComponent } from './empleados/caja/caja.component';
 import { EstadoPedidoComponent } from './empleados/caja/estado-pedido/estado-pedido.component';
 import { EditarCocinaComponent } from './empleados/cocina/editar-cocina/editar-cocina.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { EditarCajaComponent } from './empleados/caja/editar-caja/editar-caja.component';
 
 @NgModule({
   imports: [
@@ -121,6 +122,7 @@ import { BrowserModule } from '@angular/platform-browser';
     CajaComponent,
     EstadoPedidoComponent,
     EditarCocinaComponent,
+    EditarCajaComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,13 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from 'app/api/rest.service';
-import { ListaCabeceraI } from './listacabecera.interface';
 import {MatDialog} from '@angular/material/dialog';
-import { CabeceraI } from './editar-cocina/cabecera.interface';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ResponseI } from 'app/modelos/response.interface';
-import { AlertasService } from 'app/api/alertas/alertas.service';
 import { EditarCocinaComponent } from './editar-cocina/editar-cocina.component';
+import { ListaCabeceraI } from './listacabecera.interface';
 
 declare interface RouteInfo {
   path: string;
@@ -33,7 +29,7 @@ export class CocinaComponent implements AfterViewInit {
   displayedColumns: string[] = ["id_cabecera","id_usuario","id_tipo_pedido","estado","lugar_entrega","borrar"];
   dataSource;
 
-  constructor(private rest:RestService, private router:Router) {
+  constructor(private rest:RestService, private router:Router, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<ListaCabeceraI>(this.pedidos);
    }
 

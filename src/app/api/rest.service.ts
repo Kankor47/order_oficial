@@ -15,9 +15,9 @@ import { Observable } from 'rxjs';
 import { formatCurrency } from '@angular/common';
 import { CategoriaI } from 'app/Gerente/categoria/editarcategoria/categoria.interface';
 import { ListaCategoria } from 'app/Gerente/categoria/listcategoria.interface';
-import { CabeceraI } from 'app/empleados/cocina/editar-cocina/cabecera.interface';
+import { DetalleI } from 'app/empleados/cocina/editar-cocina/detalle.interface';
 import { ListaCabeceraI } from 'app/empleados/cocina/listacabecera.interface';
-
+import { CabeceraI } from 'app/modelos/cabecera.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -66,9 +66,14 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
   }
 
   //buscar por ID
-  public getCabeceraID(id):Observable<CabeceraI>{
-    let direcccion = this._url+"get/pedido/"+id;
-    return this.http.get<CabeceraI>(direcccion);
+  public getDetalleID(id):Observable<DetalleI>{
+    let direcccion = this._url+"get/detalle/"+id;
+    return this.http.get<DetalleI>(direcccion);
+  }
+
+  public getPedidoID(id):Observable<CabeceraI>{
+    let direccion = this._url+"get/pedido/"+id;
+    return this.http.get<CabeceraI>(direccion);
   }
   
   public getUserID(id):Observable<UsuarioI>{
@@ -132,11 +137,6 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
     return this.http.put<ResponseI>(direccion,form);
   }
 
-  public putCabecera(form:CabeceraI):Observable<ResponseI>{
-    let direccion = this._url+"put/pedido";
-    return this.http.put<ResponseI>(direccion,form);
-  }
-
   //metodos agregar
   public postLocal(form:LocalI):Observable<ResponseI>{
     let direccion = this._url+"post/local";
@@ -165,11 +165,6 @@ _url:string="https://order-back3nd.herokuapp.com/api/";
 
   public postCategoria(form:CategoriaI):Observable<ResponseI>{
     let direccion= this._url+"post/categoria";
-    return this.http.post<ResponseI>(direccion,form);
-  }
-
-  public postCabecera(form:CabeceraI):Observable<ResponseI>{
-    let direccion = this._url+"post/pedido";
     return this.http.post<ResponseI>(direccion,form);
   }
 }

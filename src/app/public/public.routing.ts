@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { CocinaComponent } from '../empleados/cocina/cocina.component';
 import { EstadoPedidoComponent } from '../empleados/caja/estado-pedido/estado-pedido.component';
 import { EditarCocinaComponent } from 'app/empleados/cocina/editar-cocina/editar-cocina.component';
+import { EditarCajaComponent } from 'app/empleados/caja/editar-caja/editar-caja.component';
 
 export const PublicRoutes: Routes = [
     { path: 'login',          component: LoginComponent},
@@ -41,6 +42,7 @@ export const PublicRoutes: Routes = [
     //Caja
     { path: 'caja',         component:CajaComponent},
     { path: 'estado-pedido', component:EstadoPedidoComponent},
+    { path: 'editar-caja/:id_cabecera', component:EditarCajaComponent},
 
     //Cocina
     { path: 'cocina',               component:CocinaComponent},

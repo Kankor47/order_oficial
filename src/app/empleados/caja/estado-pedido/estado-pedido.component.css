@@ -4,9 +4,9 @@ table {
 
 .mat-form-field {
   font-size: 14px;
-  width: 100%;
+  width: 800%;
 }
 
-td, th {
-  width: 25%;
+button{
+  color: #ffe600;
 }

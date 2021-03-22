@@ -1,10 +1,10 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { MatTableDataSource } from "@angular/material/table";
-import { ActivatedRoute, Router } from "@angular/router";
-import { RestService } from "app/api/rest.service";
-import { CabeceraI } from "app/modelos/cabecera.interface";
-import { ListaDetalleI } from "app/modelos/listaDetalle.interfaec";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RestService } from 'app/api/rest.service';
+import { CabeceraI } from 'app/modelos/cabecera.interface';
+import { ListaDetalleI } from 'app/modelos/listaDetalle.interfaec';
 import * as printJS from 'print-js';
 
 declare interface RouteInfo {
@@ -14,12 +14,25 @@ declare interface RouteInfo {
   class: string;
 }
 
+export const ROUTES: RouteInfo[] = [
+  { path: "/caja", title: "Pedido Entrante", icon: "house", class: "" },
+  { path: "/estado-pedido", title: "Pedidos", icon: "list", class: "" },
+];
+
 @Component({
-  selector: "app-editar-cocina",
-  templateUrl: "./editar-cocina.component.html",
-  styleUrls: ["./editar-cocina.component.css"],
+  selector: 'app-editar-caja',
+  templateUrl: './editar-caja.component.html',
+  styleUrls: ['./editar-caja.component.css']
 })
-export class EditarCocinaComponent implements OnInit {
+export class EditarCajaComponent implements OnInit {
+  isMobileMenu() {
+    if ($(window).width() > 991) {
+      return false;
+    }
+    return true;
+  }
+
+  menuItems: any[];
 
   cabecera: CabeceraI;
 
@@ -39,7 +52,7 @@ export class EditarCocinaComponent implements OnInit {
   displayedColumns: string[] = ["id_platillo", "cantidad", "nota"];
   dataSource;
 
-  constructor(private rest: RestService, private activeroute: ActivatedRoute) {
+  constructor(private rest: RestService, private activeroute: ActivatedRoute, private router:Router) {
     this.dataSource = new MatTableDataSource<ListaDetalleI>(this.detalles);
   }
 
@@ -71,5 +84,7 @@ export class EditarCocinaComponent implements OnInit {
 
   imprimir(){
     printJS('imprimir', 'html');
+    this.router.navigate(['caja']);
   }
+
 }

@@ -1,8 +1,12 @@
 table {
-    width: 100%;
+    width: 80%;
   }
   
   .mat-form-field {
-    font-size: 14px;
-    width: 100%;
+    font-size: 12px;
+    width: 800%;
+  }
+
+  button{
+    color: #ffe600;
   }

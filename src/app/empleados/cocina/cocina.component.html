@@ -97,10 +97,7 @@
                               <ng-container matColumnDef="borrar">
                                 <th mat-header-cell *matHeaderCellDef> Seleccionar </th>
                                 <td mat-cell *matCellDef="let j">
-                                  <button mat-icon-button color="warn" focusable="false" (click)="editarEstado(j.id_cabecera)">
-                                    <mat-icon>eject</mat-icon> 
-                                  </button>
-                                  <button mat-button (click)="openDialog(j.id_cabecera)"><mat-icon>eject</mat-icon></button>
+                                  <button mat-icon-button focusable="false" (click)="editarEstado(j.id_cabecera)"><mat-icon>eject</mat-icon></button>
                                 </td>
                               </ng-container>
             
@@ -128,3 +125,16 @@
           </div>
       </div>
     </div>
+    <div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+				<h3>SUSCRIBETE</h3>
+				<form action="">
+					<div class="contenedor-inputs">
+						<input type="text" placeholder="Nombre">
+						<input type="email" placeholder="Correo">
+					</div>
+					<input type="submit" class="btn-submit" value="Suscribirse">
+				</form>
+			</div>
+		</div>
