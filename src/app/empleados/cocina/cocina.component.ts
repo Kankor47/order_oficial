@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestService } from 'app/api/rest.service';
+import { RestService } from '../../api/rest.service';
 import {MatDialog} from '@angular/material/dialog';
 import { EditarCocinaComponent } from './editar-cocina/editar-cocina.component';
 import { ListaCabeceraI } from './listacabecera.interface';

@@ -3,8 +3,9 @@ import { FormGroup,FormControl,Validator} from '@angular/forms';
 import { RestService } from '../../../api/rest.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TipoUsuarioI } from './tipousuario.interface';
-import { ResponseI } from 'app/modelos/response.interface';
-import { AlertasService } from 'app/api/alertas/alertas.service';
+import { AlertasService } from 'src/app/api/alertas/alertas.service';
+import { ResponseI } from 'src/app/modelos/response.interface';
+
 
 
 @Component({

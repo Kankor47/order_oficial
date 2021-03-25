@@ -3,8 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { RestService } from 'app/api/rest.service';
-import { ListaCabeceraI } from 'app/empleados/cocina/listacabecera.interface';
+import { RestService } from 'src/app/api/rest.service';
+
+import { ListaCabeceraI } from '../../cocina/listacabecera.interface';
 
 declare interface RouteInfo {
   path: string;

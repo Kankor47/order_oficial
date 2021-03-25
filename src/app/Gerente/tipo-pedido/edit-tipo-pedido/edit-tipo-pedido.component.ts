@@ -3,8 +3,7 @@ import { TipoPedidoI } from './tipopedido.interface';
 import { FormGroup,FormControl,Validator} from '@angular/forms';
 import { RestService } from '../../../api/rest.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ResponseI } from 'app/modelos/response.interface';
-import { AlertasService } from 'app/api/alertas/alertas.service';
+
 
 @Component({
   selector: 'app-edit-tipo-pedido',

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../api/rest.service';
 import {Router} from '@angular/router';
 import { ListaTipoUsuarioI } from '../../../Gerente/tipo-usuario/listaTipoUsuario.interface';
-import { ListaLocalI } from 'app/Gerente/local/listaLocal.interface';
+
 import { UsuarioI } from '../edit-usuario/usuario.interface';
-import { ResponseI } from 'app/modelos/response.interface';
-import { AlertasService } from 'app/api/alertas/alertas.service';
+
 import { FormControl, FormGroup } from '@angular/forms';
+import { ListaLocalI } from '../../local/listaLocal.interface';
+import { AlertasService } from 'src/app/api/alertas/alertas.service';
+import { ResponseI } from 'src/app/modelos/response.interface';
 
 @Component({
   selector: 'app-agregar-usuario',

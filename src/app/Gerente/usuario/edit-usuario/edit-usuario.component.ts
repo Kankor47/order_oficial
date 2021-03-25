@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../api/rest.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ListaTipoUsuarioI } from '../../../Gerente/tipo-usuario/listaTipoUsuario.interface';
-import { ListaLocalI } from 'app/Gerente/local/listaLocal.interface';
+
 import { UsuarioI } from '../edit-usuario/usuario.interface';
 import { FormGroup,FormControl,Validator} from '@angular/forms';
-import { ResponseI } from 'app/modelos/response.interface';
-import { AlertasService } from 'app/api/alertas/alertas.service';
-import { locales } from 'moment';
-import { LocalI } from 'app/Gerente/local/edit-local/local.interface';
+import { ResponseI } from '../../../modelos/response.interface';
+
+import { LocalI } from '../../local/edit-local/local.interface';
+import { AlertasService } from 'src/app/api/alertas/alertas.service';
+import { ListaLocalI } from '../../local/listaLocal.interface';
+
 
 @Component({
   selector: 'app-edit-usuario',

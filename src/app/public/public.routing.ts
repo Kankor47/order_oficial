@@ -1,24 +1,25 @@
 import { Routes } from '@angular/router';
-import { CajaComponent } from 'app/empleados/caja/caja.component';
-import { CategoriaComponent } from 'app/gerente/categoria/categoria.component';
-import { EditarcategoriaComponent } from 'app/gerente/categoria/editarcategoria/editarcategoria.component';
-import { EditLocalComponent } from 'app/Gerente/local/edit-local/edit-local.component';
-import { LocalComponent } from 'app/Gerente/local/local.component';
-import { EditarPlatoComponent } from 'app/Gerente/platos/editar-plato/editar-plato.component';
-import { PlatosComponent } from 'app/Gerente/platos/platos.component';
-import { EditTipoPedidoComponent } from 'app/Gerente/tipo-pedido/edit-tipo-pedido/edit-tipo-pedido.component';
-import { TipoPedidoComponent } from 'app/Gerente/tipo-pedido/tipo-pedido.component';
-import { EditTipoUsuarioComponent } from 'app/Gerente/tipo-usuario/edit-tipo-usuario/edit-tipo-usuario.component';
-import { TipoUsuarioComponent } from 'app/Gerente/tipo-usuario/tipo-usuario.component';
-import { EditUsuarioComponent } from 'app/Gerente/usuario/edit-usuario/edit-usuario.component';
-import { UsuarioComponent } from 'app/Gerente/usuario/usuario.component';
-import { AdminLayoutComponent } from 'app/layouts/admin-layout/admin-layout.component';
-import { SecureComponent } from 'app/secure/secure.component';
+import { CajaComponent } from '../empleados/caja/caja.component';
+import { CategoriaComponent } from '../Gerente/categoria/categoria.component';
+import { EditarcategoriaComponent } from '../Gerente/categoria/editarcategoria/editarcategoria.component';
+import { EditLocalComponent } from '../Gerente/local/edit-local/edit-local.component';
+import { LocalComponent } from '../Gerente/local/local.component';
+import { EditarPlatoComponent } from '../Gerente/platos/editar-plato/editar-plato.component';
+import { PlatosComponent } from '../Gerente/platos/platos.component';
+import { EditTipoPedidoComponent } from '../Gerente/tipo-pedido/edit-tipo-pedido/edit-tipo-pedido.component';
+import { TipoPedidoComponent } from '../Gerente/tipo-pedido/tipo-pedido.component';
+import { EditTipoUsuarioComponent } from '../Gerente/tipo-usuario/edit-tipo-usuario/edit-tipo-usuario.component';
+import { TipoUsuarioComponent } from '../Gerente/tipo-usuario/tipo-usuario.component';
+import { EditUsuarioComponent } from '../Gerente/usuario/edit-usuario/edit-usuario.component';
+import { UsuarioComponent } from '../Gerente/usuario/usuario.component';
+import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.component';
+import { SecureComponent } from '../secure/secure.component';
 import { LoginComponent } from './login/login.component';
 import { CocinaComponent } from '../empleados/cocina/cocina.component';
 import { EstadoPedidoComponent } from '../empleados/caja/estado-pedido/estado-pedido.component';
-import { EditarCocinaComponent } from 'app/empleados/cocina/editar-cocina/editar-cocina.component';
-import { EditarCajaComponent } from 'app/empleados/caja/editar-caja/editar-caja.component';
+import { EditarCajaComponent } from '../empleados/caja/editar-caja/editar-caja.component';
+import { EditarCocinaComponent } from '../empleados/cocina/editar-cocina/editar-cocina.component';
+
 
 export const PublicRoutes: Routes = [
     { path: 'login',          component: LoginComponent},

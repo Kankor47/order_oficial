@@ -3,8 +3,7 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { Router } from "@angular/router";
-import { RestService } from "app/api/rest.service";
-import { ListaPlatosI } from "app/Gerente/platos/ListaPlatos.interface";
+import { RestService } from "../../api/rest.service";
 import { ListaCabeceraI } from "../cocina/listacabecera.interface";
 
 declare interface RouteInfo {

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ListaTipoPedidoI } from '../Gerente/tipo-pedido/listaTipoPedido.interface';
 import { ListaLocalI } from '../Gerente/local/listaLocal.interface';
-import { ListaPlatosI } from '../Gerente/platos/ListaPlatos.interface';
 import { ListaTipoUsuarioI } from '../Gerente/tipo-usuario/listaTipoUsuario.interface';
 import { ListaUsuarioI } from '../Gerente/usuario/listUsuario.interface';
 import { UsuarioI } from '../Gerente/usuario/edit-usuario/usuario.interface';
@@ -13,11 +12,12 @@ import { TipoUsuarioI } from '../Gerente/tipo-usuario/edit-tipo-usuario/tipousua
 import { ResponseI } from '../modelos/response.interface';
 import { Observable } from 'rxjs';
 import { formatCurrency } from '@angular/common';
-import { CategoriaI } from 'app/Gerente/categoria/editarcategoria/categoria.interface';
-import { ListaCategoria } from 'app/Gerente/categoria/listcategoria.interface';
-import { DetalleI } from 'app/empleados/cocina/editar-cocina/detalle.interface';
-import { ListaCabeceraI } from 'app/empleados/cocina/listacabecera.interface';
-import { CabeceraI } from 'app/modelos/cabecera.interface';
+import { CategoriaI } from '../Gerente/categoria/editarcategoria/categoria.interface';
+import { ListaCategoria } from '../Gerente/categoria/listcategoria.interface';
+import { DetalleI } from '../empleados/cocina/editar-cocina/detalle.interface';
+import { ListaCabeceraI } from '../empleados/cocina/listacabecera.interface';
+import { CabeceraI } from '../modelos/cabecera.interface';
+import { ListaPlatosI } from '../Gerente/platos/listaplatos.interface';
 
 @Injectable({
   providedIn: 'root'

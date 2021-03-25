@@ -1,11 +1,11 @@
 
 @font-face {
-    font-family: Quicksand;
-    src: url('assets/font/Quicksand-Regular.ttf'); 
+    font-family: Quicksand; 
+    src: url('../../../assets/font/Quicksand-Regular.ttf');
   }
   @font-face {
     font-family: Quicksand-Bold;
-    src: url('assets/font/Quicksand-Bold.ttf'); 
+    src: url('../../../assets/font/Quicksand-Bold.ttf');
   }
 
 :root {
@@ -19,7 +19,7 @@
   }
   
   .bg-image {
-    background-image: url('assets/img/inisio.svg');
+    background-image: url('../../../assets/img/inisio.svg');
     background-size: cover;
     background-position: center;
   }

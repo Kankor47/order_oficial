@@ -3,7 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { RestService } from 'app/api/rest.service';
+import { RestService } from 'src/app/api/rest.service';
+
 import { ListaPlatosI } from './ListaPlatos.interface';
 
 @Component({

@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestService } from 'app/api/rest.service';
-import { CabeceraI } from 'app/modelos/cabecera.interface';
-import { ListaDetalleI } from 'app/modelos/listaDetalle.interfaec';
+
 import * as printJS from 'print-js';
+import { RestService } from 'src/app/api/rest.service';
+import { CabeceraI } from 'src/app/modelos/cabecera.interface';
+import { ListaDetalleI } from 'src/app/modelos/listaDetalle.interfaec';
 
 declare interface RouteInfo {
   path: string;

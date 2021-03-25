@@ -3,15 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app.routing';
+
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
 
-import {
-  AgmCoreModule
-} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 //Gerente - Usuario
@@ -25,7 +22,7 @@ import { AgregarTipoUsuarioComponent } from './Gerente/tipo-usuario/agregar-tipo
 //Gerente - Tipo Pedido
 import { TipoPedidoComponent } from './Gerente/tipo-pedido/tipo-pedido.component';
 import { EditTipoPedidoComponent } from './Gerente/tipo-pedido/edit-tipo-pedido/edit-tipo-pedido.component';
-import { AgregarTipoPedidoComponent } from './gerente/tipo-pedido/agregar-tipo-pedido/agregar-tipo-pedido.component';
+import { AgregarTipoPedidoComponent } from './Gerente/tipo-pedido/agregar-tipo-pedido/agregar-tipo-pedido.component';
 //Gerente - Reporte
 import { ReporteComponent } from './Gerente/reporte/reporte.component';
 // Gerente - Local
@@ -45,18 +42,21 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { SecureComponent } from './secure/secure.component';
 import { PublicModule } from './public/public.module';
-import { CategoriaComponent } from './gerente/categoria/categoria.component';
-import { EditarcategoriaComponent } from './gerente/categoria/editarcategoria/editarcategoria.component';
-import { AgregarcategoriaComponent } from './gerente/categoria/agregarcategoria/agregarcategoria.component';
+
+
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatSelectModule} from '@angular/material/select'; 
+import { MatSelectModule } from '@angular/material/select'; 
 import { CocinaComponent } from './empleados/cocina/cocina.component';
 import { CajaComponent } from './empleados/caja/caja.component';
 import { EstadoPedidoComponent } from './empleados/caja/estado-pedido/estado-pedido.component';
 import { EditarCocinaComponent } from './empleados/cocina/editar-cocina/editar-cocina.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { EditarCajaComponent } from './empleados/caja/editar-caja/editar-caja.component';
+import { AgregarcategoriaComponent } from './Gerente/categoria/agregarcategoria/agregarcategoria.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CategoriaComponent } from './Gerente/categoria/categoria.component';
+import { EditarcategoriaComponent } from './Gerente/categoria/editarcategoria/editarcategoria.component';
 
 @NgModule({
   imports: [
@@ -81,9 +81,6 @@ import { EditarCajaComponent } from './empleados/caja/editar-caja/editar-caja.co
     PublicModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
   ],
   declarations: [
     AppComponent,

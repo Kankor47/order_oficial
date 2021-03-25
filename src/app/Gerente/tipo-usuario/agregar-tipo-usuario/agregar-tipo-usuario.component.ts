@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertasService } from 'app/api/alertas/alertas.service';
-import { RestService } from 'app/api/rest.service';
-import { ResponseI } from 'app/modelos/response.interface';
+import { AlertasService } from 'src/app/api/alertas/alertas.service';
+import { RestService } from 'src/app/api/rest.service';
+import { ResponseI } from 'src/app/modelos/response.interface';
+
 import { TipoUsuarioI } from '../edit-tipo-usuario/tipousuario.interface';
 
 @Component({
