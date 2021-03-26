@@ -52,7 +52,12 @@ export class LoginComponent implements OnInit {
           error=>{
             console.log(error);
           }
+    
         )
+      
+       
+      
+
       },
       error=>{
         console.log('error');
@@ -60,4 +65,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+
+ 
+
 }
