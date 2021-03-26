@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
    form: FormGroup;
-
 
   constructor(
     private fb: FormBuilder, 
@@ -28,35 +27,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-    let rol;
     this.http.post('https://order-back3nd.herokuapp.com/api/auth/login',this.form.getRawValue(),{withCredentials:true}).subscribe(
       (result:any) =>{
-       // localStorage.setItem('token',result.message);
-        //console.log(result.access_token);
-        const headers = new HttpHeaders({
-          'Authorization': 'Bearer '+ result.message
-        });
-        this.http.get('https://order-back3nd.herokuapp.com/api/auth/sesion',{headers:headers}).subscribe(
-          (result:any)=>{
-           
-            console.log(result);
-            if(result.id_rol==1){
-              this.router.navigate(['/admin']);
-            }else if( result.id_rol==3){
-              this.router.navigate(['/caja']);
-            }else{
-              this.router.navigate(['/cocina']);
-            }
-           
-          },
-          error=>{
-            console.log(error);
-          }
-    
-        )
-      
-       
-      
+        localStorage.setItem('token',result.message);
+        console.log(result.access_token);
+        this.router.navigate(['/secure']);
 
       },
       error=>{
@@ -65,8 +40,5 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
-
- 
 
 }
